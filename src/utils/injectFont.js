@@ -16,7 +16,7 @@ const fontFace = (fontFamily, fontWeight, fileUrl) => css`
 const handleFontOptions = (fontFamily, fontOptions) => {
   const fileEntries = Object.entries(fontOptions);
 
-  return fileEntries.map(([fontWeight, fontFile]) => fontFace(fontFamily, `${config.cdn}/fonts/${fontFile}`, fontWeight));
+  return fileEntries.map(([fontWeight, fontFile]) => fontFace(fontFamily, fontWeight, `${config.cdn}/fonts/${fontFile}`));
 };
 
 /**
