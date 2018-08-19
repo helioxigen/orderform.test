@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import CCSafetyMessage from '../atoms/CCSafetyMessage';
 import CCardType from '../atoms/CCardType';
@@ -14,9 +15,7 @@ const CCHeader = ({ className }) => (
 );
 
 export default styled(CCHeader)`
-  .cards {
-    ${CCardType} {
-      margin: 0 5px;
-    }
+  .cards ${CCardType} {
+    margin: 0 5px;
   }
 `;

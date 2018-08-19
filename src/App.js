@@ -1,3 +1,4 @@
+import React from 'react';
 import PageLayout from 'components/template/PageLayout';
 import Form from 'components/organisms/Form';
 import Order from 'components/organisms/Order';

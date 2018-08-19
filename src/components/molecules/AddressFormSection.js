@@ -1,4 +1,5 @@
-import FormInput from '../atoms/FormInput';
+import React from 'react';
+import FormInput from './FormInput';
 import FormRow from '../template/FormRow';
 import FormSection from '../template/FormSection';
 

@@ -1,6 +1,7 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { useProp } from 'utils';
-import FormInput from '../atoms/FormInput';
+import FormInput from '../molecules/FormInput';
 
 const FormRow = ({ className, children }) => (
   <div className={className}>{children}</div>
