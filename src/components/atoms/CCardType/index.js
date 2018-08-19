@@ -7,5 +7,5 @@ const CCardType = ({ className, type }) => (
 );
 
 export default styled(CCardType)`
-  filter: grayscale(${ifProp('active', 1, 0)});
+  filter: grayscale(${ifProp('current', 0, 1)});
 `;

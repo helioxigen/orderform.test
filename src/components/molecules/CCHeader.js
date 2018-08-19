@@ -15,6 +15,10 @@ const CCHeader = ({ className }) => (
 );
 
 export default styled(CCHeader)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   .cards ${CCardType} {
     margin: 0 5px;
   }
