@@ -5,7 +5,7 @@ const OrderCheckbox = ({ className, label, checked }) => (
   <label className={className}>
     {label}
     <input type="checkbox" checked={checked} />
-    <div className="checkmark" />
+    <span className="checkmark" />
   </label>
 );
 
