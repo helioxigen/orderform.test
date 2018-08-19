@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "plugins": [
+            {
+                "name": "typescript-styled-plugin",
+                "tags": ["transition", "styled", "media", "css"]
+            }
+        ]
+    },
+    "exclude": ["node_modules/**/*", "~/.cache/**/*"],
+    "include": ["src/**/*"]
+}
