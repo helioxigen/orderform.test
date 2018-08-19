@@ -16,5 +16,5 @@ const App = ({ className }) => (
 );
 
 export default styled(App)`
-  padding: 20px 120px 0;
+  padding: 20px 120px 120px;
 `;
