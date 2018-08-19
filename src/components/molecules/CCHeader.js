@@ -8,7 +8,7 @@ const CCHeader = ({ className }) => (
     <CCSafetyMessage />
     <div className="cards">
       {['visa', 'master', 'maestro', 'american'].map(type => (
-        <CCardType type={type} />
+        <CCardType key={type} type={type} />
       ))}
     </div>
   </header>
