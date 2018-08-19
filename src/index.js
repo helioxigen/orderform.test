@@ -17,6 +17,7 @@ injectFonts('Proxima Nova', {
 injectGlobal`
     body{
         margin: 0;
+        font-family: 'Proxima Nova', 'Trebuchet MS', Verdana, sans-serif;
     }
 `;
 
