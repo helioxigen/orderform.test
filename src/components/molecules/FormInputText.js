@@ -6,10 +6,22 @@ import InputLabel from '../atoms/InputLabel';
 import InputErrorLabel from '../atoms/InputErrorLabel';
 
 const FormInputText = ({
-  className, label, error, value, onChange, type,
+  className,
+  label,
+  error,
+  value,
+  onChange,
+  type,
+  ...props
 }) => (
   <div className={className}>
-    <TextInput type={type} value={value} onChange={onChange} />
+    <TextInput
+      data-non-empty={!!value}
+      type={type}
+      value={value}
+      onChange={onChange}
+      {...props}
+    />
     <InputLabel>{label}</InputLabel>
     {error && <InputErrorLabel>{error}</InputErrorLabel>}
   </div>
@@ -20,6 +32,7 @@ export default styled(FormInputText)`
   font-size: 18px;
   box-sizing: border-box;
 
+  [data-non-empty='true'] + label,
   input:focus + label {
     background: white;
 

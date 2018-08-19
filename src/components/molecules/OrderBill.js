@@ -5,7 +5,7 @@ import OrderBillRow from '../atoms/OrderBillRow';
 const OrderBill = ({ className, values }) => (
   <section className={className}>
     {values.map(([title, value]) => (
-      <OrderBillRow title={title} value={value} />
+      <OrderBillRow key={title} title={title} value={value} />
     ))}
   </section>
 );

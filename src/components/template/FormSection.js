@@ -13,6 +13,6 @@ export default styled(FormSection)`
 
   h2 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 `;
