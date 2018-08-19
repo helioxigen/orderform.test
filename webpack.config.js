@@ -64,7 +64,6 @@ module.exports = {
       inject: false,
       template: require('html-webpack-template'),
       appMountId: 'app',
-      devServer: 'http:/localhost:3000',
 
       title: 'Test Order Form',
     }),
