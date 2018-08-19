@@ -19,6 +19,7 @@
         "quotes": ["error", "single"],
         "semi": ["error", "always"],
         "no-case-declarations": "off",
+        "max-len": "off",
         "strict": 0,
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/prop-types": "off",

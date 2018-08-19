@@ -1,5 +1,17 @@
 {
     "compilerOptions": {
+        "target": "esnext",
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "jsx": "react",
+        "noUnusedLocals": true,
+        "checkJs": false,
+        "baseUrl": "./src/",
+        "experimentalDecorators": true,
+
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+
         "plugins": [
             {
                 "name": "typescript-styled-plugin",
