@@ -7,7 +7,7 @@ const FormRow = ({ className, children }) => (
   <div className={className}>{children}</div>
 );
 
-const setFlexSizes = sizes => sizes.map(
+const setFlexSizes = (sizes = []) => sizes.map(
   (v, idx) => css`
       :nth-child(${idx + 1}) {
         flex: ${v};
