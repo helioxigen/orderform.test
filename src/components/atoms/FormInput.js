@@ -16,7 +16,6 @@ export default styled(FormInput)`
 
   box-sizing: border-box;
   padding: 16px;
-  margin-bottom: 1em;
 
   font-size: 18px;
 
@@ -39,6 +38,7 @@ export default styled(FormInput)`
   }
 
   .error {
+    line-height: 20px;
     font-size: 12px;
     position: absolute;
     bottom: -1em;
