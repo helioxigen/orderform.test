@@ -29,12 +29,30 @@ export default styled(FormInput)`
   position: relative;
 
   box-sizing: border-box;
-  padding: 16px;
+
+  select,
+  input {
+    box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+    outline: none;
+    background: none;
+    border: 0;
+    font-weight: normal;
+    color: #000;
+    border-radius: 0;
+  }
 
   font-size: 18px;
 
   label {
+    margin: 16px 10px;
+    padding: 0 6px;
+    left: 0;
+
     position: absolute;
+    user-select: none;
+    pointer-events: none;
 
     color: #9b9b9b;
   }
@@ -43,7 +61,7 @@ export default styled(FormInput)`
     font-size: 14px;
     background: white;
 
-    transform: translateY(-30px);
+    transform: translateY(-150%);
     transition: transform 0.3s;
   }
 
@@ -55,5 +73,5 @@ export default styled(FormInput)`
     animation: ${slideBottom} 0.2s forwards;
   }
 
-  ${ifProp('error', '2px solid #fd6464', '1px solid #dcdfe6')};
+  border: ${ifProp('error', '2px solid #fd6464', '1px solid #dcdfe6')};
 `;
