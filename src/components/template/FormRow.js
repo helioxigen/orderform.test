@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { useProp } from 'utils';
-import FormInput from '../molecules/FormInput';
+import FormInputText from '../molecules/FormInputText';
+import FormInputSelect from '../molecules/FormInputSelect';
 
 const FormRow = ({ className, children }) => (
   <div className={className}>{children}</div>
@@ -18,10 +19,12 @@ const setFlexSizes = (sizes = []) => sizes.map(
 export default styled(FormRow)`
   display: flex;
 
-  margin: 10px 0;
+  margin: 20px 0;
 
-  ${FormInput} {
+  ${FormInputText}, ${FormInputSelect} {
     margin: 0 10px;
+
+    flex: 1;
 
     ${useProp('sizes', setFlexSizes)};
 

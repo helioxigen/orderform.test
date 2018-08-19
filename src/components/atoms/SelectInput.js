@@ -11,4 +11,14 @@ const SelectInput = ({
   </select>
 );
 
-export default styled(SelectInput)``;
+export default styled(SelectInput)`
+  box-sizing: border-box;
+  padding: 16px;
+  width: 100%;
+  outline: none;
+  background: none;
+  border: 0;
+  font-weight: normal;
+  color: #000;
+  border-radius: 0;
+`;

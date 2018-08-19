@@ -1,25 +1,25 @@
 import React from 'react';
-import FormInput from './FormInput';
+import FormInputText from './FormInputText';
 import FormRow from '../template/FormRow';
 import FormSection from '../template/FormSection';
 
 export default ({ type }) => (
   <FormSection title={`${type} address`}>
     <FormRow>
-      <FormInput label="First name" />
-      <FormInput label="Last name" />
+      <FormInputText label="First name" />
+      <FormInputText label="Last name" />
     </FormRow>
     <FormRow sizes={[2, 1]}>
-      <FormInput label="Street address" />
-      <FormInput label="Apt/Suite (Optional)" />
+      <FormInputText label="Street address" />
+      <FormInputText label="Apt/Suite (Optional)" />
     </FormRow>
     <FormRow>
-      <FormInput label="Postal code" />
-      <FormInput label="City" />
-      <FormInput label="State" />
+      <FormInputText label="Postal code" />
+      <FormInputText label="City" />
+      <FormInputText label="State" />
     </FormRow>
     <FormRow>
-      <FormInput label="Country" />
+      <FormInputText label="Country" />
     </FormRow>
   </FormSection>
 );
