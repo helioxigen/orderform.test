@@ -17,8 +17,7 @@ export default styled(FormSection)`
   gap: 20px;
 
   h2 {
-    grid-column: span ${prop('cols')};
+    grid-column: 1 / -1;
     font-size: 24px;
-    margin-bottom: 20px;
   }
 `;
