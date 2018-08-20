@@ -3,23 +3,33 @@ import FormInputText from './FormInputText';
 import FormRow from '../template/FormRow';
 import FormSection from '../template/FormSection';
 
-export default ({ type }) => (
+export default ({
+  type,
+  firstName,
+  lastName,
+  address,
+  apt,
+  postal,
+  city,
+  state,
+  country,
+}) => (
   <FormSection title={`${type} address`}>
     <FormRow>
-      <FormInputText label="First name" />
-      <FormInputText label="Last name" />
+      <FormInputText {...firstName} label="First name" />
+      <FormInputText {...lastName} label="Last name" />
     </FormRow>
     <FormRow sizes={[2, 1]}>
-      <FormInputText label="Street address" />
-      <FormInputText label="Apt/Suite (Optional)" />
+      <FormInputText {...address} label="Street address" />
+      <FormInputText {...apt} label="Apt/Suite (Optional)" />
     </FormRow>
     <FormRow>
-      <FormInputText label="Postal code" />
-      <FormInputText label="City" />
-      <FormInputText label="State" />
+      <FormInputText {...postal} label="Postal code" />
+      <FormInputText {...city} label="City" />
+      <FormInputText {...state} label="State" />
     </FormRow>
     <FormRow>
-      <FormInputText label="Country" />
+      <FormInputText {...country} label="Country" />
     </FormRow>
   </FormSection>
 );

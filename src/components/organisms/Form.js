@@ -3,26 +3,87 @@ import FormHeader from 'components/atoms/FormHeader';
 import FormSection from 'components/template/FormSection';
 import FormRow from 'components/template/FormRow';
 import AddressFormSection from 'components/molecules/AddressFormSection';
+import { reduxForm, Field, Fields } from 'redux-form';
+import { required, minLength10, email } from 'utils/formValidators';
 import FormInputText from '../molecules/FormInputText';
 import FormFooter from '../molecules/FormFooter';
-import CCForm from './CCForm';
+import CCFormLayout from '../template/CCFormLayout';
+import CCHeader from '../molecules/CCHeader';
 
-export default () => (
-  <form>
+const Form = ({ handleSubmit }) => (
+  <form onSubmit={handleSubmit}>
     <FormHeader
       title="Month-to-month subscription"
       subtitle="Billed monthly. Renews automatically, cancel any time. Free shipping."
     />
     <FormSection title="Create account">
       <FormRow>
-        <FormInputText type="email" label="Email address" />
-        <FormInputText type="password" label="Password" />
+        <Field
+          label="Email address"
+          name="email"
+          type="email"
+          validate={[required, email]}
+          component={FormInputText}
+        />
+        <Field
+          label="Password"
+          name="password"
+          type="password"
+          validate={[required, minLength10]}
+          component={FormInputText}
+        />
       </FormRow>
     </FormSection>
-    <AddressFormSection type="Shipping" />
+    <Fields
+      names={[
+        'firstName',
+        'lastName',
+        'address',
+        'apt',
+        'postal',
+        'city',
+        'state',
+        'country',
+      ]}
+      component={AddressFormSection}
+      type="Shipping"
+    />
     <FormSection title="Secure credit card payment">
-      <CCForm />
+      <CCFormLayout>
+        <CCHeader />
+        <FormRow sizes={[6, 4]}>
+          <Field
+            label="Credit card number"
+            name="cc.number"
+            autocomplete="cc-number"
+            component={FormInputText}
+          />
+          <Field
+            label="Security code"
+            name="cc.seccode"
+            autocomplete="cc-csc"
+            component={FormInputText}
+          />
+        </FormRow>
+        <FormRow>
+          <Field
+            label="Month"
+            name="cc.exp.month"
+            autocomplete="cc-exp-month"
+            component={FormInputText}
+          />
+          <Field
+            label="Year"
+            name="cc.exp.year"
+            autocomplete="cc-exp-year"
+            component={FormInputText}
+          />
+          Exp.
+        </FormRow>
+      </CCFormLayout>
     </FormSection>
     <FormFooter />
   </form>
 );
+
+export default reduxForm({ form: 'sub' })(Form);

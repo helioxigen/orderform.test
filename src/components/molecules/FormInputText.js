@@ -1,29 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ifProp } from 'utils';
-import TextInput from '../atoms/TextInput';
+// import TextInput from '../atoms/TextInput';
 import InputLabel from '../atoms/InputLabel';
 import InputErrorLabel from '../atoms/InputErrorLabel';
+import TextInput from '../atoms/TextInput';
 
 const FormInputText = ({
   className,
   label,
-  error,
-  value,
-  onChange,
   type,
-  ...props
+  meta: { touched, error },
+  input,
 }) => (
   <div className={className}>
-    <TextInput
-      data-non-empty={!!value}
-      type={type}
-      value={value}
-      onChange={onChange}
-      {...props}
-    />
+    <TextInput type={type} data-has-value={!!input.value} {...input} />
     <InputLabel>{label}</InputLabel>
-    {error && <InputErrorLabel>{error}</InputErrorLabel>}
+    {touched && error && <InputErrorLabel>{error}</InputErrorLabel>}
   </div>
 );
 
@@ -32,7 +25,7 @@ export default styled(FormInputText)`
   font-size: 18px;
   box-sizing: border-box;
 
-  [data-non-empty='true'] + label,
+  [data-has-value='true'] + label,
   input:focus + label {
     background: white;
 
