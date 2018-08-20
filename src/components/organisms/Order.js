@@ -23,7 +23,7 @@ const Order = ({ className, imageSrc }) => (
 
 export default styled(Order)`
   box-sizing: border-box;
-  padding: 40px 30px;
+  padding: 4rem 3rem;
   border: 1px solid #e6e6e6;
 
   margin-right: 70px;

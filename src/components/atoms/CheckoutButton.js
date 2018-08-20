@@ -25,7 +25,6 @@ const CheckoutButton = ({ className }) => (
 
 export default styled(CheckoutButton)`
   background-color: #ff458f;
-  font-size: 18px;
   box-sizing: border-box;
   padding: 15px 60px;
 `;

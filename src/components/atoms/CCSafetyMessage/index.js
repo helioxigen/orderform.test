@@ -15,13 +15,13 @@ const CCSafetyMessage = ({ className }) => (
 
 export default styled(CCSafetyMessage)`
   color: #299501;
-  font-size: 14px;
+  font-size: 1.4rem;
   text-transform: uppercase;
 
   display: flex;
   align-items: center;
 
   span {
-    margin-left: 10px;
+    margin-left: 1rem;
   }
 `;

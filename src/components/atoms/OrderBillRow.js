@@ -11,7 +11,7 @@ const OrderBillRow = ({ className, title, value }) => (
 
 export default styled(OrderBillRow)`
   span {
-    font-size: ${ifProp('big', 14, 16)}px;
+    font-size: ${ifProp('big', 1.4, 1.6)}rem;
   }
 
   span:first-child {

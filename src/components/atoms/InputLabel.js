@@ -4,8 +4,8 @@ export default styled.label`
   position: absolute;
   left: 0;
 
-  margin: 16px 10px;
-  padding: 0 6px;
+  margin: 1.6rem 1rem;
+  padding: 0 0.6rem;
 
   user-select: none;
   pointer-events: none;

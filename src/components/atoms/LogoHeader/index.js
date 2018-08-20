@@ -10,5 +10,5 @@ const LogoHeader = ({ className }) => (
 );
 
 export default styled(LogoHeader)`
-  margin-bottom: 45px;
+  margin-bottom: 4.5rem;
 `;

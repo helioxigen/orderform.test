@@ -9,6 +9,6 @@ export default styled.label`
 
   animation: ${slideBottom} 0.2s forwards;
 
-  line-height: 20px;
-  font-size: 12px;
+  line-height: 1.6;
+  font-size: 1.2rem;
 `;

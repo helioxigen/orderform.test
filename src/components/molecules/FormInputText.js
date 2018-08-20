@@ -22,7 +22,7 @@ const FormInputText = ({
 
 export default styled(FormInputText)`
   position: relative;
-  font-size: 18px;
+  font-size: 1.8rem;
   box-sizing: border-box;
 
   grid-column: span ${prop('span')};

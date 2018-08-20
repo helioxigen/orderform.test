@@ -10,14 +10,14 @@ const FormSection = ({ className, title, children }) => (
 );
 
 export default styled(FormSection)`
-  margin: 40px 0;
+  margin: 4rem 0;
 
   display: grid;
   grid-template-columns: repeat(${prop('cols')}, 1fr);
-  gap: 20px;
+  gap: 2rem;
 
   h2 {
     grid-column: 1 / -1;
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 `;

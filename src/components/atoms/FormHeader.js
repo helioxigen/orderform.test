@@ -10,14 +10,14 @@ const FormHeader = ({ className, title, subtitle }) => (
 
 export default styled(FormHeader)`
   h1 {
-    margin: 0 0 10px 0;
+    margin: 0 0 1rem;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 3.6rem;
     text-transform: uppercase;
   }
   p {
     margin: 0;
     color: #ff408e;
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 `;

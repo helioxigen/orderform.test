@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default styled.input`
   font-size: inherit;
   box-sizing: border-box;
-  padding: 16px;
+  padding: 1.6rem;
   width: 100%;
   outline: none;
   background: none;

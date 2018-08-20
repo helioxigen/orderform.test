@@ -16,7 +16,7 @@ const FormInput = ({
 );
 
 export default styled(FormInput)`
-  font-size: 18px;
+  font-size: 1.8rem;
   position: relative;
 
   box-sizing: border-box;

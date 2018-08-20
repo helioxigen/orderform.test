@@ -16,9 +16,11 @@ injectFonts('Proxima Nova', {
 });
 
 injectGlobal`
+    html{
+      font: 62.5% 'Proxima Nova', 'Trebuchet MS', Verdana, sans-serif;
+    }
     body{
         margin: 0;
-        font-family: 'Proxima Nova', 'Trebuchet MS', Verdana, sans-serif;
     }
 `;
 
