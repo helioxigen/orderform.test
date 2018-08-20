@@ -14,22 +14,14 @@ export default ({
   state,
   country,
 }) => (
-  <FormSection title={`${type} address`}>
-    <FormRow>
-      <FormInputText {...firstName} label="First name" />
-      <FormInputText {...lastName} label="Last name" />
-    </FormRow>
-    <FormRow sizes={[2, 1]}>
-      <FormInputText {...address} label="Street address" />
-      <FormInputText {...apt} label="Apt/Suite (Optional)" />
-    </FormRow>
-    <FormRow>
-      <FormInputText {...postal} label="Postal code" />
-      <FormInputText {...city} label="City" />
-      <FormInputText {...state} label="State" />
-    </FormRow>
-    <FormRow>
-      <FormInputText {...country} label="Country" />
-    </FormRow>
+  <FormSection cols={6} title={`${type} address`}>
+    <FormInputText {...firstName} span={3} label="First name" />
+    <FormInputText {...lastName} span={3} label="Last name" />
+    <FormInputText {...address} span={4} label="Street address" />
+    <FormInputText {...apt} span={2} label="Apt/Suite (Optional)" />
+    <FormInputText {...postal} span={2} label="Postal code" />
+    <FormInputText {...city} span={2} label="City" />
+    <FormInputText {...state} span={2} label="State" />
+    <FormInputText {...country} span={6} label="Country" />
   </FormSection>
 );

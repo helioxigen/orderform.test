@@ -16,23 +16,23 @@ const Form = ({ handleSubmit }) => (
       title="Month-to-month subscription"
       subtitle="Billed monthly. Renews automatically, cancel any time. Free shipping."
     />
-    <FormSection title="Create account">
-      <FormRow>
-        <Field
-          label="Email address"
-          name="email"
-          type="email"
-          validate={[required, email]}
-          component={FormInputText}
-        />
-        <Field
-          label="Password"
-          name="password"
-          type="password"
-          validate={[required, minLength10]}
-          component={FormInputText}
-        />
-      </FormRow>
+    <FormSection cols={2} title="Create account">
+      <Field
+        label="Email address"
+        name="email"
+        type="email"
+        validate={[required, email]}
+        component={FormInputText}
+        span={1}
+      />
+      <Field
+        label="Password"
+        name="password"
+        type="password"
+        validate={[required, minLength10]}
+        component={FormInputText}
+        span={1}
+      />
     </FormSection>
     <Fields
       names={[
