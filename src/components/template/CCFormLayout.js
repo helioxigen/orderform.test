@@ -5,4 +5,8 @@ export default styled.div`
   background-color: #fafafa;
 
   padding: 30px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 `;

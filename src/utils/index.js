@@ -1,5 +1,9 @@
 export const ifProp = (prop, ifTrue, ifFalse) => props => (prop in props && props[prop] ? ifTrue : ifFalse);
 
-export const useProp = (prop, fn) => props => fn(props[prop]);
+export const prop = (propName, useFn) => (props) => {
+  const value = props[propName];
 
-export const prop = propName => props => props[propName];
+  if (!useFn) return value;
+
+  return useFn(value);
+};

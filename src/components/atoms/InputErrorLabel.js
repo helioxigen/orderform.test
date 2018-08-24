@@ -3,7 +3,7 @@ import slideBottom from 'animations/slideBottom';
 
 export default styled.label`
   position: absolute;
-  bottom: -2em;
+  bottom: -2.1rem;
   color: #ff0000;
   left: 0;
 

@@ -10,13 +10,13 @@ const FormInputText = ({
   className,
   label,
   type,
-  meta: { touched, error },
+  meta: { touched, error, active },
   input,
 }) => (
   <div className={className} data-has-error={touched && !!error}>
-    <TextInput type={type} data-has-value={!!input.value} {...input} />
+    <TextInput type={type} data-not-empty={!!input.value} {...input} />
     <InputLabel>{label}</InputLabel>
-    {touched && error && <InputErrorLabel>{error}</InputErrorLabel>}
+    {touched && error && !active && <InputErrorLabel>{error}</InputErrorLabel>}
   </div>
 );
 
@@ -25,11 +25,16 @@ export default styled(FormInputText)`
   font-size: 1.8rem;
   box-sizing: border-box;
 
-  grid-column: span ${prop('span')};
+  grid-column: span ${prop('span', span => span || 1)};
 
-  [data-has-value='true'] + label,
+  input[data-not-empty='true'] + label,
   input:focus + label {
-    background: linear-gradient(transparent 40%, white 60%, transparent 70%);
+    background: linear-gradient(
+      transparent 50%,
+      white 50%,
+      white 60%,
+      transparent 60%
+    );
 
     transform: translateY(-125%) translateX(-0.5em) scale(0.85);
   }
@@ -39,6 +44,7 @@ export default styled(FormInputText)`
   ${({ meta }) => meta.touched
     && meta.error
     && css`
-      border: 2px solid #fd6464;
+      border: 1px solid #fd6464;
+      outline: ${meta.active ? 0 : 1}px solid #fd6464;
     `};
 `;

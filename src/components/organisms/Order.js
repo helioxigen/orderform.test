@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import OrderPicture from '../atoms/OrderPicture';
-import OrderCheckbox from '../atoms/OrderCheckbox';
+import OrderCheckbox from '../atoms/CheckboxInput';
 import OrderBillRow from '../atoms/OrderBillRow';
 import OrderBill from '../molecules/OrderBill';
 

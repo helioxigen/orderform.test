@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 const OrderPicture = ({ className, src, name }) => (
   <header className={className}>
-    <img src={src} alt={name} />
+    <figure>
+      <img src={src} alt={name} />
+    </figure>
   </header>
 );
 
