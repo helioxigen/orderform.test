@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { prop } from 'utils';
+import fadeIn from 'animations/fadeIn';
 
 const FormSection = ({ className, title, children }) => (
   <section className={className}>
@@ -15,6 +16,14 @@ export default styled(FormSection)`
   display: grid;
   grid-template-columns: repeat(${prop('cols')}, 1fr);
   gap: 2rem;
+
+  ${prop(
+    'animated',
+    a => a
+      && css`
+        animation: ${fadeIn} 0.7s;
+      `,
+  )};
 
   h2 {
     grid-column: 1 / -1;

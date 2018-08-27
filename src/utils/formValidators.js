@@ -29,3 +29,29 @@ export const detectCardType = num => Object.entries(ccRegex).reduce(
   (types, [type, regex]) => (regex.test(num) ? types.concat(type) : types),
   [],
 );
+
+export const validateGroupedFields = (pathKeys, excludeKeys) => (values) => {
+  const errors = {};
+
+  pathKeys.forEach((pathKey) => {
+    const fields = values[pathKey];
+    console.log('fields', fields);
+    if (!fields) return;
+
+    if (pathKey === 'billing' && values.shippingAddressAsBilling) return;
+    console.log(pathKey === 'billing' && values.shippingAddressAsBilling);
+
+    Object.entries(fields)
+      .filter(([key]) => !excludeKeys.includes(key))
+      .forEach(([key, value]) => {
+        console.log('value', value);
+        if (!value) {
+          errors[pathKey][key] = 'This field is required';
+        }
+      });
+  });
+
+  console.log(errors, values);
+
+  return errors;
+};

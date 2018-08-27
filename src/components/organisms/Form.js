@@ -14,6 +14,7 @@ import {
   isNot111,
   ccValid,
   detectCardType,
+  validateGroupedFields,
 } from 'utils/formValidators';
 import FormInputText from '../molecules/FormInputText';
 import FormFooter from '../molecules/FormFooter';
@@ -69,18 +70,49 @@ const Form = ({
         validate={[required]}
         component={FormInputText}
       />
-      <Fields
-        names={[
-          'shipping.address',
-          'shipping.apt',
-          'shipping.postal',
-          'shipping.city',
-          'shipping.state',
-          'shipping.country',
-        ]}
-        component={AddressFormSection}
-        type="shipping"
+      {/* address form fields */}
+      <Field
+        label="Street address"
+        name="shipping.address"
+        span={4}
+        validate={[required]}
+        component={FormInputText}
       />
+      <Field
+        label="Apt/Suite (Optional)"
+        name="shipping.apt"
+        span={2}
+        component={FormInputText}
+      />
+      <Field
+        label="Postal code"
+        name="shipping.postal"
+        span={2}
+        validate={[required]}
+        component={FormInputText}
+      />
+      <Field
+        label="City"
+        name="shipping.city"
+        span={2}
+        validate={[required]}
+        component={FormInputText}
+      />
+      <Field
+        label="State"
+        name="shipping.state"
+        span={2}
+        validate={[required]}
+        component={FormInputText}
+      />
+      <Field
+        label="Country"
+        name="shipping.country"
+        span={6}
+        validate={[required]}
+        component={FormInputText}
+      />
+      {/* address form fields */}
       <Field
         label="Mobile number (Optional)"
         name="mobileNumber"
@@ -97,18 +129,47 @@ const Form = ({
       />
     </FormSection>
     {!shippingAddressAsBilling && (
-      <FormSection cols={6} title="Billing address">
-        <Fields
-          names={[
-            'billing.address',
-            'billing.apt',
-            'billing.postal',
-            'billing.city',
-            'billing.state',
-            'billing.country',
-          ]}
-          component={AddressFormSection}
-          type="billing"
+      <FormSection cols={6} animated title="Billing address">
+        <Field
+          label="Street address"
+          name="billing.address"
+          span={4}
+          validate={[required]}
+          component={FormInputText}
+        />
+        <Field
+          label="Apt/Suite (Optional)"
+          name="billing.apt"
+          span={2}
+          component={FormInputText}
+        />
+        <Field
+          label="Postal code"
+          name="billing.postal"
+          span={2}
+          validate={[required]}
+          component={FormInputText}
+        />
+        <Field
+          label="City"
+          name="billing.city"
+          span={2}
+          validate={[required]}
+          component={FormInputText}
+        />
+        <Field
+          label="State"
+          name="billing.state"
+          span={2}
+          validate={[required]}
+          component={FormInputText}
+        />
+        <Field
+          label="Country"
+          name="billing.country"
+          span={6}
+          validate={[required]}
+          component={FormInputText}
         />
       </FormSection>
     )}
@@ -159,6 +220,7 @@ const valueSelector = formValueSelector('sub');
 export default compose(
   reduxForm({
     form: 'sub',
+    validate: validateGroupedFields(['shipping', 'billing'], ['apt']),
     initialValues: {
       shippingAddressAsBilling: true,
     },

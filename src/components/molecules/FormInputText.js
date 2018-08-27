@@ -13,7 +13,7 @@ const FormInputText = ({
   meta: { touched, error, active },
   input,
 }) => (
-  <div className={className} data-has-error={touched && !!error}>
+  <div className={className} data-has-error={touched && error}>
     <TextInput type={type} data-not-empty={!!input.value} {...input} />
     <InputLabel>{label}</InputLabel>
     {touched && error && !active && <InputErrorLabel>{error}</InputErrorLabel>}
