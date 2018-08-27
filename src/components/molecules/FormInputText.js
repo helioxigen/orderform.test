@@ -27,6 +27,7 @@ export default styled(FormInputText)`
 
   grid-column: span ${prop('span', span => span || 1)};
 
+  input:-webkit-autofill + label,
   input[data-not-empty='true'] + label,
   input:focus + label {
     background: linear-gradient(
